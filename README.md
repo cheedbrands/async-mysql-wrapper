@@ -81,6 +81,11 @@ async function insert() {
     console.log("Got insert id: " + id);
     assert.ok(id > 0, "插入测试失败");
 }
+
+async function insert() {
+    let id = await repository.insertItem({name: "张三", age: 30});
+    console.log("God insert id: " + id);
+}
 ```
 
 #### 修改
@@ -93,6 +98,12 @@ async function update() {
     console.log("Got update affected rows: " + affectedRows);
     assert.ok(affectedRows > 0, "更新测试失败");
 }
+
+async function update() {
+    const affectedRows = await repository.updateItem({name: "张三", age: 40});
+    console.log("Got update affected rows: " + affectedRows);
+}
+
 ```
 
 #### 删除
